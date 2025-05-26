@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Aneruth Tamilarasu, an undergraduate student specializing in Python, Machine Learning, and Web Development, with a passion for technology and sports.">
+    <meta name="keywords" content="Aneruth Tamilarasu, Python, Machine Learning, Web Development, Portfolio, SRM University, Football, Roller Skating">
+    <meta name="author" content="Aneruth Tamilarasu">
+    <title>Aneruth Tamilarasu - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2a1bff;  /* Darker blue for menu bar */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        /* Update heading color and make uppercase */
+        section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2a1bff;  /* Darker blue for headings */
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;  /* Make headings uppercase */
+        }
+
+        /* Update footer background to match nav */
+        footer {
+            background: #2a1bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-grow: 1;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f9c74f;
+        }
+
+        .download-btn {
+            background: #f9c74f;
+            color: #333;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #f4a261;
+        }
+
+        /* Hero Section */
+        #home {
+            background: #4a3bff;
+            color: #fff;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-image img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-btn {
+            background: #f9c74f;
+            color: #333;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #f4a261;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 20px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #4a3bff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* About Section */
+        #about {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        #about p {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-item h3 {
+            font-size: 1.5rem;
+            color: #4a3bff;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Experience Section */
+        #experience {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .experience-item {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Skills Section */
+        #skills {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill {
+            background: #F9F9F9;
+            color: #4a3bff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        #services {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item h3 {
+            font-size: 1.3rem;
+            color: #4a3bff;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #fff;
+            color: #333;
+            text-align: center;
+            padding: 60px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        #contact h2 {
+            color: #4a3bff;
+        }
+
+        #contact a {
+            color: #4a3bff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        #contact a:hover {
+            color: #f9c74f;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: #fff;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form button {
+            background: #4a3bff;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: #3a2ecc;
+        }
+
+        /* Footer */
+        footer {
+            background: #4a3bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .download-btn {
+                margin: 0 auto;
+                display: block;
+                text-align: center;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-image img {
+                width: 200px;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="https://drive.google.com/file/d/1okdlXUWM5eDl9CvEYAzKqxvt90pMMKao/view?usp=drive_link" class="download-btn" target="_blank">Download CV</a>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hello, I’m Aneruth Tamilarasu</h1>
+                    <p>Undergraduate Student | Python & Machine Learning Enthusiast | Aspiring Web Developer</p>
+                    <p>Passionate about technology, football, and roller skating, aiming to innovate at a marquee company and settle abroad.</p>
+                    <a href="#contact" class="cta-btn">Get in Touch</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://i.postimg.cc/T2tX2gTn/Whats-App-Image-2025-05-26-at-15-03-15-7a73be37.jpg" alt="Aneruth Tamilarasu Profile Picture">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm Aneruth Tamilarasu, an ambitious undergraduate at SRM University (expected graduation: 2027), driven by a passion for technology and innovation. My goal is to master Python, Machine Learning, and Web Development, contributing to cutting-edge projects at a global tech leader.</p>
+            <p>Beyond coding, I’m a sports enthusiast, representing at the national level roller skating and football. These experiences have honed my teamwork, discipline, and resilience—qualities I bring to my technical pursuits. I completed my schooling at Velammal Vidyalaya, where my curiosity for tech began.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <h3>AI Tourist Guide</h3>
+                    <p>Developed an AI-powered tourist guide application to provide personalized travel recommendations and itineraries.</p>
+                    <p><strong>Role:</strong> Backend Developer</p>
+                    <p><strong>Tools:</strong> Python, Meta Llama, React</p>
+                </div>
+                <div class="portfolio-item">
+                    <h3>Railway Ticket System</h3>
+                    <p>Developed a railway ticket booking system with a focus on efficient data management and user interaction.</p>
+                    <p><strong>Role:</strong> Lead Developer</p>
+                    <p><strong>Tools:</strong> Python, SQL</p>
+                </div>
+                <div class="portfolio-item">
+                    <h3>Medicine Inventory</h3>
+                    <p>Built a database-driven inventory system for managing medicine stock and tracking usage.</p>
+                    <p><strong>Role:</strong> Database Designer</p>
+                    <p><strong>Tools:</strong> MySQL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>Upcoming Internship - Larsen & Toubro</h3>
+                <p><strong>June 15-30, 2025</strong></p>
+                <p>Selected for a competitive internship to work on innovative engineering and technology solutions, gaining hands-on experience in a leading global company.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <span class="skill">Python</span>
+                <span class="skill">Machine Learning (In Progress)</span>
+                <span class="skill">Web Development (In Progress)</span>
+                <span class="skill">SQL</span>
+                <span class="skill">Communication</span>
+                <span class="skill">Teamwork</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <h3>Python Development</h3>
+                    <p>Building efficient and scalable applications using Python, with a focus on automation and data management.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Machine Learning</h3>
+                    <p>Actively learning and developing skills in Machine Learning to create intelligent, data-driven solutions.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Web Development</h3>
+                    <p>Working on modern web development techniques to create user-friendly and responsive websites.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- Add EmailJS SDK in the head section -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("service_infynw8");
+        })();
+    </script>
+
+    <!-- Update the contact form section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:aneruthtamilarasu@gmail.com">aneruthtamilarasu@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/aneruthtamilarasu" target="_blank">linkedin.com/in/aneruthtamilarasu</a></p>
+            <p>GitHub: <a href="https://github.com/Aneruth1" target="_blank">github.com/Aneruth1</a></p>
+            <form class="contact-form" id="contactForm" onsubmit="return sendEmail(event)">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Update the script section -->
+    <script>
+        function sendEmail(e) {
+            e.preventDefault();
+            
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+                to_name: 'Aneruth Tamilarasu',
+                reply_to: document.getElementById('email').value
+            };
+            
+            emailjs.send('service_infynw8', 'template_id', templateParams)
+                .then(function(response) {
+                    alert('Message sent successfully!');
+                    document.getElementById('contactForm').reset();
+                }, function(error) {
+                    alert('Failed to send message. Please try again.');
+                });
+                
+            return false;
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Aneruth Tamilarasu. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
