@@ -527,54 +527,81 @@
     </section>
 
     <!-- Contact Section -->
-    <!-- Add EmailJS SDK in the head section -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("service_infynw8");
-        })();
-    </script>
-
-    <!-- Update the contact form section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:aneruthtamilarasu@gmail.com">aneruthtamilarasu@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/aneruthtamilarasu" target="_blank">linkedin.com/in/aneruthtamilarasu</a></p>
-            <p>GitHub: <a href="https://github.com/Aneruth1" target="_blank">github.com/Aneruth1</a></p>
-            <form class="contact-form" id="contactForm" onsubmit="return sendEmail(event)">
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Update the script section -->
-    <script>
-        function sendEmail(e) {
-            e.preventDefault();
-            
-            const templateParams = {
-                from_name: document.getElementById('name').value,
-                from_email: document.getElementById('email').value,
-                message: document.getElementById('message').value,
-                to_name: 'Aneruth Tamilarasu',
-                reply_to: document.getElementById('email').value
-            };
-            
-            emailjs.send('service_infynw8', 'template_id', templateParams)
-                .then(function(response) {
-                    alert('Message sent successfully!');
-                    document.getElementById('contactForm').reset();
-                }, function(error) {
-                    alert('Failed to send message. Please try again.');
-                });
+    <!-- Place this in the head section -->
+    <head>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    </head>
+    
+    <body>
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aneruthtamilarasu@gmail.com" target="_blank">aneruthtamilarasu@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/aneruthtamilarasu" target="_blank">linkedin.com/in/aneruthtamilarasu</a></p>
+                <p>GitHub: <a href="https://github.com/Aneruth1" target="_blank">github.com/Aneruth1</a></p>
                 
-            return false;
-        }
-    </script>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" id="from_name" name="from_name" placeholder="Your Name" required>
+                    <input type="email" id="reply_to" name="reply_to" placeholder="Your Email" required>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" id="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    
+        <script>
+            // Initialize EmailJS with your public key
+            (function() {
+                try {
+                    emailjs.init("GRZWK-gW5Mp7cSvR3");
+                    console.log('EmailJS Initialized Successfully');
+                } catch (error) {
+                    console.error('EmailJS Initialization Error:', error);
+                }
+            })();
+    
+            // Add form submit event listener
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Get the submit button
+                const submitButton = document.getElementById('submit-btn');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+                
+                // Get form data
+                const templateParams = {
+                    from_name: document.getElementById('from_name').value,
+                    to_name: 'Aneruth Tamilarasu',
+                    from_email: document.getElementById('reply_to').value,
+                    message: document.getElementById('message').value,
+                    email: 'aneruthtamilarasu@gmail.com'  // Changed to match EmailJS template variable
+                };
+    
+                console.log('Sending email with params:', templateParams);
+                
+                // Send the email
+                emailjs.send('service_infynw8', 'template_x5tg3xc', templateParams)
+                    .then(function(response) {
+                        console.log('Email sent successfully:', response);
+                        alert('Thank you! Your message has been sent.');
+                        document.getElementById('contactForm').reset();
+                    })
+                    .catch(function(error) {
+                        console.error('EmailJS detailed error:', error);
+                        if (error.text) {
+                            alert('Error sending message: ' + error.text);
+                        } else {
+                            alert('Failed to send message. Please try again later.');
+                        }
+                    })
+                    .finally(function() {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Message';
+                    });
+            });
+        </script>
+</head>
 
     <!-- Footer -->
     <footer>
