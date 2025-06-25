@@ -3,611 +3,967 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Aneruth Tamilarasu, an undergraduate student specializing in Python, Machine Learning, and Web Development, with a passion for technology and sports.">
-    <meta name="keywords" content="Aneruth Tamilarasu, Python, Machine Learning, Web Development, Portfolio, SRM University, Football, Roller Skating">
-    <meta name="author" content="Aneruth Tamilarasu">
-    <title>Aneruth Tamilarasu - Portfolio</title>
+    <title>Aneruth's Website</title>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/v6w9qC7L/Black-White-Minimalist-Professional-Initial-Logo-2.png">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Lora:wght@500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        @import url('https://fonts.googleapis.com/css2?family=Debata:wght@700&display=swap');
+
+        :root {
+            --bg-color: #f9f9fb;
+            --text-color: #333;
+            --header-bg: #e6f0fa;
+            --header-text: #2c3e50;
+            --section-title-bg: #d6e4ff;
+            --section-title-hover: #c3d7ff;
+            --section-content-bg: #fff;
+            --button-bg: #5c7cfa;
+            --button-hover: #4a69bd;
+            --border-color: #e0e0e0;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --input-bg: #f9f9fb;
+            --secondary-text: #444;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --header-bg: #2c3e50;
+            --header-text: #e0e0e0;
+            --section-title-bg: #34495e;
+            --section-title-hover: #46627f;
+            --section-content-bg: #2d2d2d;
+            --button-bg: #5c7cfa;
+            --button-hover: #4a69bd;
+            --border-color: #444;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --input-bg: #333;
+            --secondary-text: #b0b0b0;
         }
 
         body {
-            background: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Lora', serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navigation */
-        nav {
-            background: #2a1bff;  /* Darker blue for menu bar */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 15px 0;
-        }
-
-        /* Update heading color and make uppercase */
-        section h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #2a1bff;  /* Darker blue for headings */
+        h1 {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            font-family: 'Debata', serif;
+            font-size: 40px;
+            font-weight: bold;
             text-align: center;
-            margin-bottom: 30px;
-            text-transform: uppercase;  /* Make headings uppercase */
+            padding: 15px 20px;
+            margin: -20px -20px 20px -20px;
+            border-radius: 0;
+            width: calc(100% + 40px);
         }
 
-        /* Update footer background to match nav */
-        footer {
-            background: #2a1bff;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 0.9rem;
+        .section-title {
+            background-color: var(--section-title-bg);
+            color: var(--header-text);
+            font-family: 'Lora', serif;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 12px 20px;
+            margin: 10px -20px;
+            border-radius: 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: calc(100% + 40px);
+            text-align: left;
         }
 
-        .nav-container {
+        .section-title-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
+            background-color: var(--section-title-bg);
+            padding: 12px 20px;
+            margin: 10px -20px;
+            border-radius: 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: calc(100% + 40px);
+            box-sizing: border-box;
         }
 
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-grow: 1;
+        .section-title-container:hover {
+            background-color: var(--section-title-hover);
         }
 
-        nav ul li {
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1rem;
+        .section-title-container .section-title {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lora', serif;
+            font-size: 20px;
             font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #f9c74f;
-        }
-
-        .download-btn {
-            background: #f9c74f;
-            color: #333;
-            padding: 8px 20px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background 0.3s ease;
-        }
-
-        .download-btn:hover {
-            background: #f4a261;
-        }
-
-        /* Hero Section */
-        #home {
-            background: #4a3bff;
-            color: #fff;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
+            color: var(--header-text);
             text-align: left;
-            padding: 40px 20px;
-            position: relative;
         }
 
-        .hero-content {
+        .section-title-container .action-button {
+            flex-shrink: 0;
+            margin-right: 10px;
+        }
+
+        .section-title:hover {
+            background-color: var(--section-title-hover);
+        }
+
+        .section-content {
+            display: none;
+            margin: 0 10px 20px;
+            background-color: var(--section-content-bg);
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px var(--shadow-color);
+        }
+
+        .section-content.active {
+            display: block;
+        }
+
+        .section-content pre {
+            font-family: 'Lora', serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--header-text);
+            padding: 12px;
+            white-space: pre-wrap;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .about-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .about-box {
+            flex: 1;
+            background-color: var(--section-content-bg);
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px var(--shadow-color);
+        }
+
+        .about-box h3 {
+            font-family: 'Lora', serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--header-text);
+            text-align: center;
+        }
+
+        .project-list {
+            margin: 0;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project-item {
+            margin-bottom: 15px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project-title {
+            font-family: 'Lora', serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--header-text);
+            margin: 0;
+            text-align: center;
+            line-height: 1.8;
+            display: inline-block;
+        }
+
+        .project-description {
+            font-family: 'Lora', serif;
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--secondary-text);
+            margin: 5px 0 0;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-family: 'Lora', serif;
+            font-size: 15px;
+            font-weight: 400;
+            color: #fff;
+            background-color: var(--button-bg);
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 10px 5px;
+            transition: background-color 0.3s ease;
+            line-height: 1.8;
+        }
+
+        a.button:hover {
+            background-color: var(--button-hover);
+        }
+
+        a.view-button {
+            font-family: 'Lora', serif;
+            font-size: 13px;
+            font-weight: 400;
+            text-decoration: none;
+            color: #fff;
+            background-color: var(--button-bg);
+            padding: 6px 12px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            line-height: 1.8;
+            box-sizing: border-box;
+            width: 60px;
+            text-align: center;
+        }
+
+        a.view-button:hover {
+            background-color: var(--button-hover);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: var(--border-color);
+            margin: 20px 0;
+        }
+
+        .profile-photo {
+            display: block;
+            margin: 20px 35px 20px auto;
+
+            width: 160px;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid var(--button-bg);
+            ;
+        }
+
+        .profile-flex-container {
             display: flex;
             align-items: center;
-            gap: 40px;
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .hero-text h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
+            gap: 32px;
             margin-bottom: 20px;
         }
 
-        .hero-image img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        .profile-text {
+            flex: 1;
+            font-family: 'Lora', serif;
+            color: var(--header-text);
         }
 
-        .cta-btn {
-            background: #f9c74f;
-            color: #333;
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background 0.3s ease;
-        }
-
-        .cta-btn:hover {
-            background: #f4a261;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 60px 20px;
-        }
-
-        section h2 {
-            font-size: 2rem;
+        .profile-text h2 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
             font-weight: 600;
-            color: #4a3bff;
-            text-align: center;
-            margin-bottom: 30px;
         }
 
-        /* About Section */
-        #about {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin: 20px 0;
+        .profile-text p {
+            margin: 0;
+            font-size: 17px;
+            color: var(--secondary-text);
         }
 
-        #about p {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            font-size: 1.1rem;
-            color: #666;
+        table {
+            border-collapse: collapse;
+            margin: 15px auto;
+            width: 100%;
+            background-color: var(--section-content-bg);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px var(--shadow-color);
         }
 
-        /* Portfolio Section */
-        #portfolio {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin: 20px 0;
+        th, td {
+            font-family: 'Lora', serif;
+            font-size: 16px;
+            font-weight: 400;
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: left;
+            line-height: 1.8;
         }
 
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        th {
+            background-color: var(--section-content-bg);
+            color: var(--header-text);
+            font-weight: 500;
         }
 
-        .portfolio-item {
-            background: #f9f9f9;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        td {
+            color: var(--secondary-text);
+        }
+
+        .social-buttons {
+            margin: 15px 0;
+            text-align:right;
+        }
+
+        a.social-button {
+            padding: 8px;
+            margin: 0 10px;
+            background-color: transparent;
+            display: inline-block;
+        }
+
+        .social-logo {
+            width: 24px;
+            height: auto;
             transition: transform 0.3s ease;
         }
 
-        .portfolio-item:hover {
-            transform: translateY(-5px);
+        a.social-button:hover .social-logo {
+            transform: scale(1.1);
         }
 
-        .portfolio-item h3 {
-            font-size: 1.5rem;
-            color: #4a3bff;
-            margin-bottom: 10px;
+        .centered-button {
+            text-align: center;
         }
 
-        .portfolio-item p {
-            font-size: 1rem;
-            color: #666;
-        }
-
-        /* Experience Section */
-        #experience {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-
-        .experience-item {
-            background: #f9f9f9;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 700px;
-            margin: 0 auto 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Skills Section */
-        #skills {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-
-        .skills-list {
-            display: flex;
+        .edit-form {
+            margin: 20px auto;
+            display: none;
+            background-color: var(--section-content-bg);
+            padding: 10px;
+            border-radius: 6px;
+            max-width: 100%;
+            box-shadow: 0 1px 4px var(--shadow-color);
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            align-items: center;
+            gap: 10px;
         }
 
-        .skill {
-            background: #F9F9F9;
-            color: #4a3bff;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 1rem;
-            font-weight: 500;
+        .edit-form.active {
+            display: flex;
         }
 
-        /* Services Section */
-        #services {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin: 20px 0;
+        .edit-form input {
+            font-family: 'Lora', serif;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            flex: 1;
+            min-width: 150px;
+            line-height: 1.8;
         }
 
-        .services-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
+        .edit-form input[type="hidden"] {
+            display: none;
         }
 
-        .service-item {
-            background: #f9f9f9;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-item h3 {
-            font-size: 1.3rem;
-            color: #4a3bff;
-            margin-bottom: 10px;
-        }
-
-        .service-item p {
-            font-size: 1rem;
-            color: #666;
-        }
-
-        /* Contact Section */
-        #contact {
-            background: #fff;
-            color: #333;
-            text-align: center;
-            padding: 60px 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-
-        #contact h2 {
-            color: #4a3bff;
-        }
-
-        #contact a {
-            color: #4a3bff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        #contact a:hover {
-            color: #f9c74f;
-        }
-
-        .contact-form {
-            max-width: 500px;
-            margin: 20px auto;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-size: 1rem;
-            background: #fff;
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .contact-form button {
-            background: #4a3bff;
+        .action-button {
+            font-family: 'Lora', serif;
+            font-size: 13px;
+            font-weight: 400;
+            padding: 6px 12px;
+            background-color: var(--button-bg);
             color: #fff;
             border: none;
-            padding: 12px 30px;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: 500;
+            border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background: #3a2ecc;
-        }
-
-        /* Footer */
-        footer {
-            background: #4a3bff;
-            color: #fff;
+            margin: 0 5px;
+            transition: background-color 0.3s ease;
+            line-height: 1.8;
+            width: 60px;
             text-align: center;
-            padding: 20px 0;
-            font-size: 0.9rem;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 10px;
-            }
+        .action-button:hover {
+            background-color: var(--button-hover);
+        }
 
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-            }
+        #contactForm input, #contactForm textarea {
+            font-family: 'Lora', serif;
+            font-size: 14px;
+            font-weight: 400;
+            width: 100%;
+            max-width: 450px;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
 
-            nav ul li {
-                margin: 10px 0;
-            }
+        #contactForm textarea {
+            height: 100px;
+            resize: vertical;
+        }
 
-            .download-btn {
-                margin: 0 auto;
-                display: block;
-                text-align: center;
-            }
+        #submitBtn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
 
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
+        .resume-button-container {
+            text-align: center;
+        }
 
-            .hero-text h1 {
-                font-size: 2rem;
-            }
+        #themeToggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--section-content-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px var(--shadow-color);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            z-index: 1000;
+        }
 
-            .hero-image img {
-                width: 200px;
-            }
+        #themeToggle:hover {
+            background-color: var(--section-title-hover);
+            transform: scale(1.1);
+        }
 
-            section h2 {
-                font-size: 1.8rem;
-            }
+        #themeToggle::before {
+            content: '🌙';
+            font-size: 20px;
+            color: var(--header-text);
+        }
+
+        [data-theme="dark"] #themeToggle::before {
+            content: '☀️';
+        }
+
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-family: 'Lora', serif;
+            font-size: 14px;
+            padding: 10px 15px;
+            background-color: var(--button-bg);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 5px var(--shadow-color);
+            transition: background-color 0.3s ease, opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: var(--button-hover);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .skill-box {
+            background-color: var(--section-content-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0 1px 4px var(--shadow-color);
+            padding: 18px 20px;
+            width: 260px;
+            min-width: 200px;
+            max-width: 100%;
+            text-align: left;
+            transition: box-shadow 0.3s;
+        }
+
+        .skill-box h4 {
+            margin: 0 0 8px 0;
+            color: var(--header-text);
+            font-size: 18px;
+            font-weight: 600;
+            font-family: 'Lora', serif;
+        }
+
+        .skill-box p {
+            margin: 0;
+            color: var(--secondary-text);
+            font-size: 15px;
+            font-family: 'Lora', serif;
+        }
+
+        a.project-title-link {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        a.project-title-link .project-title {
+            font-family: 'Lora', serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--header-text);
+            margin: 0;
+            text-align: center;
+            line-height: 1.8;
+            display: inline-block;
+        }
+
+        a.project-title-link:hover .project-title {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="https://drive.google.com/file/d/1YXbAHPEvWxac2DD_o-2qqqN3RfnwZk4f/view?usp=drive_link" class="download-btn" target="_blank">Download CV</a>
+    <button id="themeToggle" title="Toggle Theme" onclick="toggleTheme()"></button>
+    <h1>Aneruth's Portfolio</h1>
+    <div class="social-buttons">
+        <a href="https://www.linkedin.com/in/aneruthtamilarasu" target="_blank" class="button social-button">
+            <img src="https://i.ibb.co/Hfk97Swb/images.png" alt="LinkedIn Logo" class="social-logo">
+        </a>
+        <a href="https://github.com/Aneruth1" target="_blank" class="button social-button">
+            <img src="https://i.ibb.co/B2rD6p2q/images.jpg" alt="GitHub Logo" class="social-logo">
+        </a>
+        <a href="https://www.gmail.com/" target="_blank" class="button social-button">
+            <img src="https://i.ibb.co/FLgKwqPk/gmail-logo-on-transparent-white-background-free-vector.jpg" alt="Gmail Logo" class="social-logo">
+        </a>
+        <a href="https://drive.google.com/file/d/1YXbAHPEvWxac2DD_o-2qqqN3RfnwZk4f/view" target="_blank" class="button social-button">
+            <img src="https://i.ibb.co/HL29GtCb/Black-And-Beige-Minimalist-Aesthetic-Modern-Simple-Typography-Salt-Logo.png" alt="Resume" class="social-logo"></a>
+    </div>
+    <div class="profile-flex-container">
+        <div class="profile-text">
+            <h2>Hello, I'm Aneruth Tamilarasu</h2>
+            <p>
+                A 3rd-year B.Tech Computer Science (Core) student at SRM University, graduating in 2027.<br> 
+                I'm passionate about Python, Frontend Development, and Machine Learning. <br>
+                My goal is to get placed in a great company and build a successful, fulfilling career.
+            </p>
         </div>
-    </nav>
-
-    <!-- Home Section -->
-    <section id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Hello, I’m Aneruth Tamilarasu</h1>
-                    <p>Undergraduate Student | Python & Machine Learning Enthusiast | Aspiring Web Developer</p>
-                    <p>Passionate about technology, football, and roller skating, aiming to innovate at a marquee company and settle abroad.</p>
-                    <a href="#contact" class="cta-btn">Get in Touch</a>
-                </div>
-                <div class="hero-image">
-                    <img src="https://i.postimg.cc/T2tX2gTn/Whats-App-Image-2025-05-26-at-15-03-15-7a73be37.jpg" alt="Aneruth Tamilarasu Profile Picture">
-                </div>
+        <img src="https://i.ibb.co/B9Q6CMY/Photo.jpg" alt="Aneruth's Profile Photo" class="profile-photo">
+    </div>
+    <p class="section-title" onclick="toggleSection(this)">About Me</p>
+    <div class="section-content">
+        <div class="about-container">
+            <div class="about-box">
+                <h3>Personal</h3>
+                <pre>
+I'm Aneruth Tamilarasu, a curious and motivated undergraduate at SRM University (B.Tech CSE, graduating 2027). Outside the classroom, I’m a national-level roller skater and a football player. These sports have taught me the value of discipline, teamwork, and resilience — traits I bring into every aspect of my life.</pre>
+            </div>
+            <div class="about-box">
+                <h3>Work</h3>
+                <pre>
+With a strong passion for technology, I aim to build impactful solutions through Python, Frontend Development, and Machine Learning. My journey in tech began at Velammal Vidyalaya, where I discovered my love for coding. Today, I'm focused on deepening my skills and securing a role where I can grow, contribute, and make a difference.</pre>
             </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I'm Aneruth Tamilarasu, an ambitious undergraduate at SRM University (expected graduation: 2027), driven by a passion for technology and innovation. My goal is to master Python, Machine Learning, and Web Development, contributing to cutting-edge projects at a global tech leader.</p>
-            <p>Beyond coding, I’m a sports enthusiast, representing at the national level roller skating and football. These experiences have honed my teamwork, discipline, and resilience—qualities I bring to my technical pursuits. I completed my schooling at Velammal Vidyalaya, where my curiosity for tech began.</p>
+    </div>
+    <hr>
+    <div class="section-title-container" onclick="toggleSection(this)">
+        <p class="section-title">Education</p>
+        <button class="action-button" onclick="showAddForm(); event.stopPropagation();">+</button>
+    </div>
+    <div class="section-content">
+        <table id="education-table">
+            <tr>
+                <th>S.No</th>
+                <th>Education</th>
+                <th>Place</th>
+                <th>Percentage</th>
+                <th>CGPA</th>
+                <th>Certificates</th>
+                <th>Actions</th>
+            </tr>
+            <tr data-index="1">
+                <td>1</td>
+                <td>10th Grade</td>
+                <td>Velammal Vidyalaya</td>
+                <td>80%</td>
+                <td>-</td>
+                <td><a href="https://drive.google.com/file/d/1Z2RqgCKXnqB4xdRON9Da_oxE-PdBBnvE/view?usp=drive_link" target="_blank" class="action-button view-button">View</a></td>
+                <td>
+                    <button class="action-button" onclick="editRow(this)">Edit</button>
+                    <button class="action-button" onclick="deleteRow(this)">Delete</button>
+                </td>
+            </tr>
+            <tr data-index="2">
+                <td>2</td>
+                <td>12th Grade</td>
+                <td>Velammal Vidyalaya</td>
+                <td>75%</td>
+                <td>-</td>
+                <td><a href="https://drive.google.com/file/d/1uHpqnWPODCXTz0aQ3K-r4l3_mG6CXD0F/view?usp=drive_link" target="_blank" class="action-button view-button">View</a></td>
+                <td>
+                    <button class="action-button" onclick="editRow(this)">Edit</button>
+                    <button class="action-button" onclick="deleteRow(this)">Delete</button>
+                </td>
+            </tr>
+            <tr data-index="3">
+                <td>3</td>
+                <td>(UG)4th sem*</td>
+                <td>SRM University</td>
+                <td>-</td>
+                <td>7.90</td>
+                <td><a href="https://drive.google.com/file/d/1e3KYN29SlbH7KNn9MtpJY0FzJfqzCSj3/view?usp=drive_link" target="_blank" class="action-button view-button">View</a></td>
+                <td>
+                    <button class="action-button" onclick="editRow(this)">Edit</button>
+                    <button class="action-button" onclick="deleteRow(this)">Delete</button>
+                </td>
+            </tr>
+        </table>
+        <div id="edit-form" class="edit-form">
+            <input type="text" id="education-input" placeholder="Education" pattern="[A-Za-z0-9\s@.*()]+" title="Only alphanumeric characters, spaces, and @ are allowed">
+            <input type="text" id="place-input" placeholder="Place" pattern="[A-Za-z0-9\s@.*()]+" title="Only alphanumeric characters, spaces, and @ are allowed">
+            <input type="number" id="percentage-input" placeholder="Percentage" min="0" max="100" step="0.01">
+            <input type="number" id="cgpa-input" placeholder="CGPA" min="0" max="10" step="0.01">
+            <input type="url" id="certificate-input" placeholder="Certificate URL (optional)">
+            <button class="action-button" type="button" onclick="saveRow()">Save</button>
+            <button class="action-button" type="button" onclick="cancelEdit()">Cancel</button>
+            <input type="hidden" id="edit-index">
         </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <div class="container">
-            <h2>Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <h3>AI Tourist Guide</h3>
-                    <p>Developed an AI-powered tourist guide application to provide personalized travel recommendations and itineraries.</p>
-                    <p><strong>Role:</strong> Backend Developer</p>
-                    <p><strong>Tools:</strong> Python, Meta Llama, React</p>
-                </div>
-                <div class="portfolio-item">
-                    <h3>Railway Ticket System</h3>
-                    <p>Developed a railway ticket booking system with a focus on efficient data management and user interaction.</p>
-                    <p><strong>Role:</strong> Lead Developer</p>
-                    <p><strong>Tools:</strong> Python, SQL</p>
-                </div>
-                <div class="portfolio-item">
-                    <h3>Medicine Inventory</h3>
-                    <p>Built a database-driven inventory system for managing medicine stock and tracking usage.</p>
-                    <p><strong>Role:</strong> Database Designer</p>
-                    <p><strong>Tools:</strong> MySQL</p>
-                </div>
+    </div>
+    <hr>
+    <p class="section-title" onclick="toggleSection(this)">Projects</p>
+    <div class="section-content">
+        <div class="project-list">
+            <div class="project-item">
+                <a href="https://github.com/Aneruth1/railway-ticket-management" target="_blank" class="project-title-link">
+                    <span class="project-title">🔗Railway Management System</span>
+                </a>
+                <p class="project-description">Developed a railway ticket booking system with a focus on efficient data management and user interaction.</p>
+            </div>
+            <div class="project-item">
+                <a href="https://github.com/Aneruth1/ai-tourist-guide" target="_blank" class="project-title-link">
+                    <span class="project-title">🔗AI Tourist Guide</span>
+                </a>
+                <p class="project-description">Developed an AI-powered tourist guide application to provide personalized travel recommendations and itineraries.</p>
+            </div>
+            <div class="project-item">
+                <a href="https://github.com/Aneruth1/zoo-management-system" target="_blank" class="project-title-link">
+                    <span class="project-title">🔗Zoo Management System</span>
+                </a>
+                <p class="project-description">Developed a system to manage zoo animals, including tracking their health, feeding schedules, and visitor information.</p>
             </div>
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="experience-item">
-                <h3>Upcoming Internship - Larsen & Toubro</h3>
-                <p><strong>June 15-30, 2025</strong></p>
-                <p>Selected for a competitive internship to work on innovative engineering and technology solutions, gaining hands-on experience in a leading global company.</p>
+    </div>
+    <hr>
+    <p class="section-title" onclick="toggleSection(this)">Skills & Learnings</p>
+    <div class="section-content">
+        <div class="skills-container">
+            <div class="skill-box">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <img src="https://i.ibb.co/zThKG0Zc/images-1.jpg" alt="Python Logo" style="width:28px; height:28px; border-radius:4px;">
+                    <h4 style="margin: 0;">Python</h4>
+                </div>
+                <p>Used for scripting, automation, and data analysis in both personal and academic projects.</p>
+            </div>
+            <div class="skill-box">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <img src="https://i.ibb.co/rGnwQ8Nd/images-2.png" alt="HTML Logo" style="width:28px; height:28px; border-radius:4px;">
+                    <h4 style="margin: 0;">HTML</h4>
+                </div>
+                <p>Skilled in creating structured, semantic web pages as the foundation of web projects.</p>
+            </div>
+            <div class="skill-box">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <img src="https://i.ibb.co/JjyR3kHd/css3-logo-png-seeklogo-186678.png" alt="CSS Logo" style="width:28px; height:28px; border-radius:4px;">
+                    <h4 style="margin: 0;">CSS</h4>
+                </div>
+                <p>Good at making websites look nice and responsive using modern CSS styles.</p>
+            </div>
+            <div class="skill-box">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <img src="https://i.ibb.co/rGBh14SZ/360-F-398181949-Bud-Ymm-Ae-TPJw-Dz6-HMxwf1-PL3-ZNIblohm.jpg" alt="Machine Learning Logo" style="width:28px; height:28px; border-radius:4px;">
+                    <h4 style="margin: 0;">Machine Learning (Learning)</h4>
+                </div>
+                <p>Currently learning ML concepts and applying them to small projects using Python libraries.</p>
+            </div>
+            <div class="skill-box">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <img src="https://i.ibb.co/VcYtpnhz/js-emblem-orange-shield-and-white-text-vector.jpg" alt="JavaScript Logo" style="width:28px; height:28px; border-radius:4px;">
+                    <h4 style="margin: 0;">JavaScript (Learning)</h4>
+                </div>
+                <p>Learning JavaScript to add interactivity and dynamic features to web applications.</p>
             </div>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-list">
-                <span class="skill">Python</span>
-                <span class="skill">Machine Learning (In Progress)</span>
-                <span class="skill">Web Development (In Progress)</span>
-                <span class="skill">SQL</span>
-                <span class="skill">Communication</span>
-                <span class="skill">Teamwork</span>
-            </div>
+    </div>
+    <hr>
+    <p class="section-title" onclick="toggleSection(this)">To Contact Me</p>
+    <div class="section-content">
+        <div class="centered-button">
+            <form id="contactForm" action="https://formspree.io/f/movwlony" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required><br>
+                <input type="email" name="email" placeholder="Your Email" required><br>
+                <textarea name="message" placeholder="Your Message" required></textarea><br>
+                <button type="submit" class="button" id="submitBtn">Send Message</button>
+            </form>
         </div>
-    </section>
+    </div>
+    <hr>
+    <button id="scrollToTopBtn" title="Scroll to Top">↑</button>
+    <script>
+        function toggleSection(element) {
+            let content = element.nextElementSibling;
+            while (content && !content.classList.contains('section-content')) {
+                content = content.nextElementSibling;
+            }
+            if (content) {
+                content.classList.toggle('active');
+            }
+        }
 
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <h2>Services</h2>
-            <div class="services-list">
-                <div class="service-item">
-                    <h3>Python Development</h3>
-                    <p>Building efficient and scalable applications using Python, with a focus on automation and data management.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Machine Learning</h3>
-                    <p>Actively learning and developing skills in Machine Learning to create intelligent, data-driven solutions.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Web Development</h3>
-                    <p>Working on modern web development techniques to create user-friendly and responsive websites.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        let currentEditIndex = null;
 
-    <!-- Contact Section -->
-    <!-- Place this in the head section -->
-    <head>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    </head>
-    
-    <body>
-        <section id="contact">
-            <div class="container">
-                <h2>Contact Me</h2>
-                <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aneruthtamilarasu@gmail.com" target="_blank">aneruthtamilarasu@gmail.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/aneruthtamilarasu" target="_blank">linkedin.com/in/aneruthtamilarasu</a></p>
-                <p>GitHub: <a href="https://github.com/Aneruth1" target="_blank">github.com/Aneruth1</a></p>
-                
-                <form class="contact-form" id="contactForm">
-                    <input type="text" id="from_name" name="from_name" placeholder="Your Name" required>
-                    <input type="email" id="reply_to" name="reply_to" placeholder="Your Email" required>
-                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit" id="submit-btn">Send Message</button>
-                </form>
-            </div>
-        </section>
-    
-        <script>
-            // Initialize EmailJS with your public key
-            (function() {
-                try {
-                    emailjs.init("GRZWK-gW5Mp7cSvR3");
-                    console.log('EmailJS Initialized Successfully');
-                } catch (error) {
-                    console.error('EmailJS Initialization Error:', error);
+        function editRow(button) {
+            event.stopPropagation();
+            console.log('editRow called');
+            try {
+                const row = button.parentElement.parentElement;
+                const index = row.getAttribute('data-index');
+                const cells = row.children;
+
+                document.getElementById('education-input').value = cells[1].textContent;
+                document.getElementById('place-input').value = cells[2].textContent;
+                document.getElementById('percentage-input').value = cells[3].textContent === '-' ? '' : cells[3].textContent.replace('%', '');
+                document.getElementById('cgpa-input').value = cells[4].textContent === '-' ? '' : cells[4].textContent;
+                const certificateLink = cells[5].querySelector('a');
+                document.getElementById('certificate-input').value = certificateLink ? certificateLink.getAttribute('href') : '';
+                document.getElementById('edit-index').value = index;
+                currentEditIndex = index;
+
+                document.getElementById('edit-form').classList.add('active');
+            } catch (error) {
+                console.error('Edit error:', error);
+                alert('Error opening edit form. Please try again.');
+            }
+        }
+
+        function deleteRow(button) {
+            event.stopPropagation();
+            console.log('deleteRow called');
+            try {
+                const row = button.parentElement.parentElement;
+                row.remove();
+                updateSerialNumber();
+            } catch (error) {
+                console.error('Delete error:', error);
+                alert('Error deleting row. Please try again.');
+            }
+        }
+
+        function showAddForm() {
+            event.stopPropagation();
+            console.log('showAddForm called');
+            try {
+                const table = document.getElementById('education-table');
+                if (table.rows.length - 1 >= 100) {
+                    alert('Cannot add more than 100 education entries.');
+                    return;
                 }
-            })();
-    
-            // Add form submit event listener
-            document.getElementById('contactForm').addEventListener('submit', function(event) {
-                event.preventDefault();
-                
-                // Get the submit button
-                const submitButton = document.getElementById('submit-btn');
-                submitButton.disabled = true;
-                submitButton.textContent = 'Sending...';
-                
-                // Get form data
-                const templateParams = {
-                    from_name: document.getElementById('from_name').value,
-                    to_name: 'Aneruth Tamilarasu',
-                    from_email: document.getElementById('reply_to').value,
-                    message: document.getElementById('message').value,
-                    email: 'aneruthtamilarasu@gmail.com'  // Changed to match EmailJS template variable
-                };
-    
-                console.log('Sending email with params:', templateParams);
-                
-                // Send the email
-                emailjs.send('service_infynw8', 'template_x5tg3xc', templateParams)
-                    .then(function(response) {
-                        console.log('Email sent successfully:', response);
-                        alert('Thank you! Your message has been sent.');
-                        document.getElementById('contactForm').reset();
-                    })
-                    .catch(function(error) {
-                        console.error('EmailJS detailed error:', error);
-                        if (error.text) {
-                            alert('Error sending message: ' + error.text);
-                        } else {
-                            alert('Failed to send message. Please try again later.');
-                        }
-                    })
-                    .finally(function() {
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Send Message';
-                    });
-            });
-        </script>
-</head>
+                document.getElementById('education-input').value = '';
+                document.getElementById('place-input').value = '';
+                document.getElementById('percentage-input').value = '';
+                document.getElementById('cgpa-input').value = '';
+                document.getElementById('certificate-input').value = '';
+                document.getElementById('edit-index').value = '';
+                currentEditIndex = null;
+                document.getElementById('edit-form').classList.add('active');
+            } catch (error) {
+                console.error('Show add form error:', error);
+                alert('Error opening add form. Please try again.');
+            }
+        }
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2025 Aneruth Tamilarasu. All rights reserved.</p>
-        </div>
-    </footer>
+        function saveRow() {
+            event.stopPropagation();
+            console.log('saveRow called');
+            try {
+                const education = document.getElementById('education-input').value.trim();
+                const place = document.getElementById('place-input').value.trim();
+                const percentage = document.getElementById('percentage-input').value.trim();
+                const cgpa = document.getElementById('cgpa-input').value.trim();
+                const certificate = document.getElementById('certificate-input').value.trim();
+                const table = document.getElementById('education-table');
+
+                console.log('Form values:', { education, place, percentage, cgpa, certificate });
+
+                if (!education) {
+                    alert('Education field cannot be empty.');
+                    return;
+                }
+                if (!/^[A-Za-z0-9\s@.*()]+$/.test(education)) {
+                    alert('Education must contain only alphanumeric characters, spaces, and @.');
+                    return;
+                }
+
+                if (!place) {
+                    alert('Place field cannot be.empty.');
+                    return;
+                }
+                if (!/^[A-Za-z0-9\s@.*()]+$/.test(place)) {
+                    alert('Place must contain only alphanumeric characters, spaces, and @.');
+                    return;
+                }
+
+                if (percentage) {
+                    const percentageNum = parseFloat(percentage);
+                    if (isNaN(percentageNum) || percentageNum < 0 || percentageNum > 100) {
+                        alert('Percentage must be a number between 0 and 100.');
+                        return;
+                    }
+                }
+
+                if (cgpa) {
+                    const cgpaNum = parseFloat(cgpa);
+                    if (isNaN(cgpaNum) || cgpaNum < 0 || cgpaNum > 10) {
+                        alert('CGPA must be a number between 0 and 10.');
+                        return;
+                    }
+                }
+
+                if (certificate) {
+                    const urlPattern = /^(https?:\/\/).+\.[a-zA-Z]{2,}(\/.*)?$/;
+                    if (!urlPattern.test(certificate)) {
+                        alert('Certificate URL must be a valid URL (e.g., https://drive.google.com/...).');
+                        return;
+                    }
+                }
+
+                if (!currentEditIndex && table.rows.length - 1 >= 100) {
+                    alert('Cannot add more than 100 education entries.');
+                    return;
+                }
+
+                const percentageDisplay = percentage ? `${percentage}%` : '-';
+                const cgpaDisplay = cgpa ? cgpa : '-';
+                const certificateDisplay = certificate ? `<a href="${certificate}" target="_blank" class="action-button view-button">View</a>` : '-';
+
+                if (currentEditIndex) {
+                    const row = table.querySelector(`tr[data-index="${currentEditIndex}"]`);
+                    if (!row) {
+                        alert('Error: Row not found. Please try again.');
+                        return;
+                    }
+                    row.children[1].textContent = education;
+                    row.children[2].textContent = place;
+                    row.children[3].textContent = percentageDisplay;
+                    row.children[4].textContent = cgpaDisplay;
+                    row.children[5].innerHTML = certificateDisplay;
+                } else {
+                    const newIndex = table.rows.length;
+                    const row = table.insertRow();
+                    row.setAttribute('data-index', newIndex);
+                    row.innerHTML = `
+                        <td>${newIndex}</td>
+                        <td>${education}</td>
+                        <td>${place}</td>
+                        <td>${percentageDisplay}</td>
+                        <td>${cgpaDisplay}</td>
+                        <td>${certificateDisplay}</td>
+                        <td>
+                            <button class="action-button" onclick="editRow(this)">Edit</button>
+                            <button class="action-button" onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    `;
+                }
+
+                console.log('Row saved successfully');
+                cancelEdit();
+                updateSerialNumber();
+            } catch (error) {
+                console.error('Save error:', error);
+                alert('An error occurred while saving. Please check the console for details and try again.');
+            }
+        }
+
+        function cancelEdit() {
+            event.stopPropagation();
+            console.log('cancelEdit called');
+            try {
+                const form = document.getElementById('edit-form');
+                form.classList.remove('active');
+                document.getElementById('education-input').value = '';
+                document.getElementById('place-input').value = '';
+                document.getElementById('percentage-input').value = '';
+                document.getElementById('cgpa-input').value = '';
+                document.getElementById('certificate-input').value = '';
+                document.getElementById('edit-index').value = '';
+                currentEditIndex = null;
+                console.log('Form reset and closed');
+            } catch (error) {
+                console.error('Cancel error:', error);
+                alert('Error cancelling form. Please try again.');
+            }
+        }
+
+        function updateSerialNumber() {
+            console.log('updateSerialNumber called');
+            try {
+                const table = document.getElementById('education-table');
+                const rows = table.rows;
+                for (let i = 1; i < rows.length; i++) {
+                    rows[i].children[0].textContent = i;
+                    rows[i].setAttribute('data-index', i);
+                }
+                console.log('Serial numbers updated');
+            } catch (error) {
+                console.error('Serial number update error:', error);
+                alert('Error updating serial numbers. Please try again.');
+            }
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', currentTheme);
+            localStorage.setItem('theme', currentTheme);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', initialTheme);
+        });
+
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
